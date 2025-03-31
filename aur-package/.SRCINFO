@@ -7,8 +7,6 @@ pkgbase = nightscape
 	license = MIT
 	makedepends = cargo
 	depends = rust
-	depends = signal-hook
-	depends = crossterm
 	source = nightscape-0.1.0.tar.gz::https://github.com/xhon4/nightscape/archive/v0.1.0.tar.gz
 	sha256sums = SKIP
 
