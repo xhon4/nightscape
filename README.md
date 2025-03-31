@@ -5,17 +5,16 @@ Who doesn’t love a starry sky? ✨
 A beautiful starry sky, and the moonlight shining in your already lovely terminal.
 
 
-## How to install this magic? 🛠️
 ### From Source
 1. Clone this bad boy:
    ```
    git clone https://github.com/xhon4/nightscape.git
    cd nightscape
    ```
-2. Build and install it:
+2. Build and install it with Cargo:
 ```
    cargo install --path .
-```   
+```
 From Releases
 1. Grab the binary from the Releases page.
 2. Move it somewhere in your $PATH (like /usr/local/bin):
