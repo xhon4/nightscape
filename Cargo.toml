@@ -1,0 +1,13 @@
+[package]
+name = "nightscape"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+crossterm = "0.26"
+rand = "0.8"
+signal-hook = "0.3"
+
+[[bin]]
+name = "nightscape"
+path = "src/main.rs"
