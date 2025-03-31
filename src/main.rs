@@ -105,21 +105,43 @@ fn random_event(
     moon_height: usize,
 ) {
     let mut rng = rand::thread_rng();
-    match rng.gen_range(0..100) {
-        0..=4 => turn_off_star(stars),
-        5..=9 => create_new_star(stars, term_width, term_height, moon_x, moon_y, moon_width, moon_height),
-        10 => spawn_comet(term_width, term_height),
-        11 => spawn_ufo(term_width, term_height),
+    match rng.gen_range(0..1000) { // Aumentamos el rango para reducir la frecuencia de eventos
+        0..=4 => turn_off_star(stars, term_width, term_height, moon_x, moon_y, moon_width, moon_height), // Evento raro
+        5..=6 => spawn_comet(term_width, term_height), // Cometa sigue siendo poco frecuente
+        7 => spawn_ufo(term_width, term_height), // OVNI es extremadamente raro
         _ => {}
     }
 }
 
-fn turn_off_star(stars: &mut Vec<(usize, usize, char)>) {
+fn turn_off_star(
+    stars: &mut Vec<(usize, usize, char)>,
+    term_width: usize,
+    term_height: usize,
+    moon_x: usize,
+    moon_y: usize,
+    moon_width: usize,
+    moon_height: usize,
+) {
     let mut rng = rand::thread_rng();
     if !stars.is_empty() {
         let index = rng.gen_range(0..stars.len());
         if let Some(star) = stars.get_mut(index) {
+            // Apagar la estrella actual
             star.2 = ' ';
+            
+            // Generar nueva posición para la estrella
+            let mut new_x;
+            let mut new_y;
+            loop {
+                new_x = rng.gen_range(0..term_width);
+                new_y = rng.gen_range(0..term_height);
+                // Asegurarse de que no esté dentro del área de la luna
+                if !(moon_y..moon_y + moon_height).contains(&new_y) || !(moon_x..moon_x + moon_width).contains(&new_x) {
+                    break;
+                }
+            }
+            // Reubicar la estrella con un nuevo brillo
+            *star = (new_x, new_y, BRIGHTNESS_LEVELS[rng.gen_range(0..BRIGHTNESS_LEVELS.len())]);
         }
     }
 }

@@ -97,6 +97,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "nightscape"
+version = "0.1.0"
+dependencies = [
+ "crossterm",
+ "rand",
+ "signal-hook",
+]
+
+[[package]]
 name = "parking_lot"
 version = "0.12.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -219,15 +228,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a9e9e0b4211b72e7b8b6e85c807d36c212bdb33ea8587f7569562a84df5465b1"
 dependencies = [
  "libc",
-]
-
-[[package]]
-name = "sky_simulation"
-version = "0.1.0"
-dependencies = [
- "crossterm",
- "rand",
- "signal-hook",
 ]
 
 [[package]]
