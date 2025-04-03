@@ -68,17 +68,10 @@ Just type:
 nightscape
 ```
 And boom! The night sky appears in your terminal. 🌠
-
----
-
-## Why should you care? 🤷‍♂️
-Because it's cool. And sometimes, you just need a little night sky in your life. Plus, UFOs. Enough said.
-
 ---
 
 ## Wanna contribute? 🤝
-Feel free to open issues, suggest features, or submit pull requests. Let's make this the best terminal night sky simulator ever.
-
+Feel free to open issues, suggest features, or submit pull requests. 
 ---
 
 ## License 📜
