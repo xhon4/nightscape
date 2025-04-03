@@ -15,7 +15,7 @@ use signal_hook::flag;
 
 const WIDTH: usize = 80;
 const HEIGHT: usize = 20;
-const _PHASES: [&str; 8] = ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"];
+//const _PHASES: [&str; 8] = ["🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘"];
 const BRIGHTNESS_LEVELS: [char; 7] = ['.', '•', '*', '✦', '*', '•', '.'];
 const FRAME_DELAY: u64 = 50;
 const ASCII_MOON_PHASES: [&[&str]; 1] = [
@@ -108,7 +108,7 @@ fn random_event(
     match rng.gen_range(0..1000) {
         0..=4 => turn_off_star(stars, term_width, term_height, moon_x, moon_y, moon_width, moon_height),
         5..=6 => spawn_comet(term_width, term_height),
-        7 => spawn_ufo(term_width, term_height),
+         7..=23 => spawn_ufo(term_width, term_height), // Ajustado para 1.7% de probabilidad
         _ => {}
     }
 }
