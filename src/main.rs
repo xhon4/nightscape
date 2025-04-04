@@ -141,23 +141,6 @@ fn turn_off_star(
     }
 }
 
-fn create_new_star(
-    stars: &mut Vec<(usize, usize, char)>,
-    term_width: usize,
-    term_height: usize,
-    moon_x: usize,
-    moon_y: usize,
-    moon_width: usize,
-    moon_height: usize,
-) {
-    let mut rng = rand::thread_rng();
-    let x = rng.gen_range(0..term_width);
-    let y = rng.gen_range(0..term_height);
-    if !(moon_y..moon_y + moon_height).contains(&y) || !(moon_x..moon_x + moon_width).contains(&x) {
-        stars.push((x, y, BRIGHTNESS_LEVELS[rng.gen_range(0..BRIGHTNESS_LEVELS.len())]));
-    }
-}
-
 fn spawn_comet(term_width: usize, term_height: usize) {
     let mut stdout = stdout();
     let mut rng = rand::thread_rng();
@@ -179,23 +162,30 @@ fn spawn_comet(term_width: usize, term_height: usize) {
 }
 
 fn spawn_ufo(term_width: usize, term_height: usize) {
-    let mut stdout = stdout();
-    let mut rng = rand::thread_rng();
-    let ufo_x = rng.gen_range(0..term_width);
-    let ufo_y = rng.gen_range(0..term_height / 2);
-    execute!(
-        stdout,
-        cursor::MoveTo(ufo_x as u16, ufo_y as u16),
-        Print("🛸")
-    )
-    .unwrap();
-    thread::sleep(Duration::from_millis(500));
-    execute!(
-        stdout,
-        cursor::MoveTo(ufo_x as u16, ufo_y as u16),
-        Print(" ")
-    )
-    .unwrap();
+    let ufo_thread = thread::spawn(move || {
+        let mut stdout = stdout();
+        let mut rng = rand::thread_rng();
+        let ufo_x = rng.gen_range(0..term_width);
+        let ufo_y = rng.gen_range(0..term_height / 2);
+        execute!(
+            stdout,
+            cursor::MoveTo(ufo_x as u16, ufo_y as u16),
+            Print("🛸")
+        )
+        .unwrap();
+        thread::sleep(Duration::from_millis(500));
+        execute!(
+            stdout,
+            cursor::MoveTo(ufo_x as u16, ufo_y as u16),
+            Print(" ")
+        )
+        .unwrap();
+    });
+
+    // Esperar a que el hilo termine, pero no bloquear la animación principal
+    ufo_thread.join().unwrap_or_else(|_| {
+        eprintln!("Error al ejecutar la animación del ovni.");
+    });
 }
 
 fn main() {
