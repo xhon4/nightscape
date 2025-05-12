@@ -8,7 +8,7 @@ license=('MIT')
 depends=()
 makedepends=('rust' 'cargo')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/xhon4/nightscape/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('a068a8c8d94ffd8349dc8bccafe6683571eb882ba38606319c03842952543a32')
 
 build() {
   cd "$pkgname-$pkgver"
