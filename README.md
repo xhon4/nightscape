@@ -1,82 +1,68 @@
-# Nightscape 🌌
-Who doesn’t love a starry sky? ✨
+# Nightscape
 
-## What does it do? 🤔
-A beautiful starry sky, and the moonlight shining in your already lovely terminal.
+[![Crates.io](https://img.shields.io/crates/v/nightscape.svg)](https://crates.io/crates/nightscape)
 
----
+Animación de un cielo nocturno en la terminal, con luna, estrellas y eventos aleatorios.
 
-## Installation Instructions
+## Instalación
 
-### Arch Linux (via AUR)
-Install the package from the AUR:
-```bash
-yay -S nightscape
+### Opción rápida (recomendado)
+
+```sh
+cargo install nightscape
 ```
 
-### Other Linux Distributions
-#### Using the Installation Script
-Run the following command to download and install the binary:
-```bash
-curl -s https://raw.githubusercontent.com/xhon4/nightscape/main/install.sh | bash
+### Otras opciones
+
+### Opción 1: Usando Cargo (recomendado, multiplataforma)
+
+```sh
+cargo install nightscape
+```
+> Si no está publicado aún, puedes instalarlo directamente desde GitHub:
+```sh
+cargo install --git https://github.com/tu_usuario/nightscape
 ```
 
-#### Using the `.deb` Package (Debian/Ubuntu-based distributions)
-1. Download the `.deb` package from the [Releases](https://github.com/xhon4/nightscape/releases) page.
-2. Install it using:
-   ```bash
-   sudo dpkg -i nightscape.deb
-   ```
+### Opción 2: Descargar binarios precompilados
 
-#### Using the `.rpm` Package (Fedora-based distributions)
-1. Download the `.rpm` package from the [Releases](https://github.com/xhon4/nightscape/releases) page.
-2. Install it using:
-   ```bash
-   sudo dnf install nightscape.rpm
-   ```
+Ve a la sección [Releases](https://github.com/tu_usuario/nightscape/releases) y descarga el binario para tu sistema operativo.
 
-### macOS
-Use the installation script:
-```bash
-curl -s https://raw.githubusercontent.com/xhon4/nightscape/main/install.sh | bash
+### Opción 3: Compilar manualmente
+
+#### 1. Instala Rust
+
+- **Linux/macOS:**  
+  ```sh
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  ```
+- **Windows:**  
+  Descarga e instala desde [rustup.rs](https://rustup.rs/).
+
+#### 2. Clona este repositorio
+
+```sh
+git clone https://github.com/tu_usuario/nightscape.git
+cd nightscape
 ```
 
-Alternatively, download the binary from the [Releases](https://github.com/xhon4/nightscape/releases) page and place it in `/usr/local/bin`.
+#### 3. Compila y ejecuta
 
-### Windows
-1. Download the `.exe` file from the [Releases](https://github.com/xhon4/nightscape/releases) page.
-2. Run the `.exe` file to execute the program.
-
----
-
-## From Source
-1. Clone this:
-   ```bash
-   git clone https://github.com/xhon4/nightscape.git
-   cd nightscape
-   ```
-2. Build and install it with Cargo:
-   ```bash
-   cargo install --path .
-   ```
-
----
-
-## How to run it? 🚀
-Just type:
-```bash
-nightscape
+```sh
+cargo run
 ```
-And boom! The night sky appears in your terminal. 🌠
----
 
-## Wanna contribute? 🤝
-Feel free to open issues, suggest features, or submit pull requests. 
----
+O para compilar el binario:
 
-## License 📜
-MIT License. Do whatever you want with it, just don't blame me if the UFOs come for you.
+```sh
+cargo build --release
+./target/release/nightscape
+```
 
----
+## Compatibilidad
 
-Enjoy the stars, my friend. 🌌✨
+Funciona en Linux, macOS y Windows (en terminales compatibles con Unicode y ANSI).
+
+## Licencia
+
+MIT
