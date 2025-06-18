@@ -1,68 +1,52 @@
-# Nightscape
+Nightscape
 
-[![Crates.io](https://img.shields.io/crates/v/nightscape.svg)](https://crates.io/crates/nightscape)
+Crates.io
 
-Animación de un cielo nocturno en la terminal, con luna, estrellas y eventos aleatorios.
+A terminal animation of a night sky, featuring a moon, stars, and random events.
+Installation
+Quick Option (Recommended)
 
-## Instalación
-
-### Opción rápida (recomendado)
-
-```sh
 cargo install nightscape
-```
 
-### Otras opciones
+Other Options
+Option 1: Using Cargo (Recommended, Cross-platform)
 
-### Opción 1: Usando Cargo (recomendado, multiplataforma)
-
-```sh
 cargo install nightscape
-```
-> Si no está publicado aún, puedes instalarlo directamente desde GitHub:
-```sh
+
+    If it hasn't been published yet, you can install it directly from GitHub:
+
 cargo install --git https://github.com/xhon4/nightscape.git
-```
 
-### Opción 2: Descargar binarios precompilados
+Option 2: Download Precompiled Binaries
 
-Ve a la sección [Releases](https://github.com/xhon4/nightscape/releases) y descarga el binario para tu sistema operativo.
+Go to the Releases section and download the binary for your operating system.
+Option 3: Build Manually
+1. Install Rust
 
-### Opción 3: Compilar manualmente
+    Linux/macOS:
 
-#### 1. Instala Rust
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-- **Linux/macOS:**  
-  ```sh
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  ```
-- **Windows:**  
-  Descarga e instala desde [rustup.rs](https://rustup.rs/).
+    Windows:
+    Download and install from rustup.rs.
 
-#### 2. Clona este repositorio
+2. Clone the Repository
 
-```sh
-git clone (https://github.com/xhon4/nightscape.git)
+git clone https://github.com/xhon4/nightscape.git
 cd nightscape
-```
 
-#### 3. Compila y ejecuta
+3. Build and Run
 
-```sh
 cargo run
-```
 
-O para compilar el binario:
+Or to build the release binary:
 
-```sh
 cargo build --release
 ./target/release/nightscape
-```
 
-## Compatibilidad
+Compatibility
 
-Funciona en Linux, macOS y Windows (en terminales compatibles con Unicode y ANSI).
-
-## Licencia
+Works on Linux, macOS, and Windows (in terminals that support Unicode and ANSI).
+License
 
 MIT
