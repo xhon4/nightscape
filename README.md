@@ -28,13 +28,12 @@ Go to the Releases section and download the appropriate binary for your operatin
 Option 3: Manual Build
 1. Install Rust
 
-    Linux/macOS
+Linux/macOS
 ```sh
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
-    Windows
-    Download and install from https://rustup.rs
-
+Windows
+Download and install from https://rustup.rs
 2. Clone the Repository
 ```sh
 git clone https://github.com/xhon4/nightscape.git
